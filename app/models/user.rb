@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: {minimum: 6}
   validates :password_confirmation, presence: true
 
-  before_save { |user| user.email = email.downcase }
+  # Replace current before_save code with the following:
+  before_save do |user|
+    user.email = email.downcase
+    user.remember_token = SecureRandom.urlsafe_base64
+  end
+  # End of replacement
 
 end
