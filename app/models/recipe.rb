@@ -5,4 +5,6 @@ class Recipe < ActiveRecord::Base
   validates :user_id, presence: true
   validates :name, presence: true
   validates :method, presence: true
+
+  default_scope order: 'recipes.created_at DESC'
 end

@@ -13,6 +13,7 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
+    puts params
     @micropost.destroy
     redirect_to root_url
   end

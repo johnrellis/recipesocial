@@ -16,4 +16,12 @@
         </ol>
     <% end %>
   </div>
+  <div class="span12">
+    <% if @user.recipes.any? %>
+        <h3>recipes (<%= @user.recipes.count %>)</h3>
+        <ol class="microposts">
+          <%= render @recipes %>
+        </ol>
+    <% end %>
+  </div>
 </div> 

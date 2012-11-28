@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_filter :signed_in_user
 
   def new
     @recipe = Recipe.new
@@ -12,6 +13,12 @@ class RecipesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @recipe = current_user.recipes.find_by_id(params[:id])
+    @recipe.destroy
+    redirect_to root_url
   end
 
 end

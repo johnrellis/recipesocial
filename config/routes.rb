@@ -2,7 +2,7 @@ Mytwitter::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
-  resources :recipes
+  resources :recipes, only: [:create, :destroy]
 
 =begin
   get "static_pages/home"
