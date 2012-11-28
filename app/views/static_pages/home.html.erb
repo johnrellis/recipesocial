@@ -11,23 +11,26 @@
     </div>
 <% else %>
     <div class="center hero-unit">
-      <h1>Welcome to the Sample App</h1>
+      <h1>Recipe Social</h1>
 
       <h2>
-        This is the home page for the
-        <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-        sample application.
+        Eat your passion!
       </h2>
-
-      <p>
-        <%= link_to "Sign in", signin_path,
-                    class: "btn btn-large btn-primary" %>
-      </p>
-
-      <p>
-        <%= link_to "Sign up now!", signup_path %>
-      </p>
     </div>
+    <div class="row">
+      <div class="span6 offset3">
+        <%= form_for(:session, url: sessions_path) do |f| %>
 
-    <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+            <%= f.label :email %>
+            <%= f.text_field :email, value: params[:email] %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+
+            <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+        <% end %>
+
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      </div>
+    </div>
 <% end %>

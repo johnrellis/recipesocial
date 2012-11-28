@@ -1,9 +1,5 @@
 class SessionsController < ApplicationController
 
-  def new
-
-  end
-
   def create
     @email = params[:session][:email].downcase
     user = User.find_by_email(@email)
@@ -13,12 +9,12 @@ class SessionsController < ApplicationController
         redirect_to user
       else
         flash[:error] = "Sorry, your password is incorrect"
-        render 'new'
+        redirect_to root_path(email: @email)
       end
       # Sign the user in and redirect to the user's show page.
     else
       flash[:error] = "Sorry, no user exists with the email address #@email"
-      render 'new'
+      redirect_to root_path(email: @email)
     end
   end
 
