@@ -2,7 +2,7 @@ Mytwitter::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
-  resources :recipes, only: [:create, :destroy]
+  resources :recipes
 
 =begin
   get "static_pages/home"
@@ -20,6 +20,8 @@ Mytwitter::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'static_pages#signin'
   match '/signout', to: 'sessions#destroy', via: :delete
+
+  match '/create_recipe', to: 'recipes#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

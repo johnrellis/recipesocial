@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
     redirect_to signin_path unless current_user
     #initialize a micropost for posting from the homepage
     @micropost = current_user.microposts.build if signed_in?
+    @microposts = Micropost.all
+    @recipes = Recipe.all
   end
 
   def help
