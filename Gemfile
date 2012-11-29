@@ -50,3 +50,9 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'bootstrap-sass', '2.0.0'
+gem "bootstrap-wysihtml5-rails"
+
+#allow truncation of html
+gem "nokogiri"
+gem "htmlentities"
+gem 'truncate_html'
