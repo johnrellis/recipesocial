@@ -1,36 +1,10 @@
-<% if signed_in? %>
-    <div class="row">
-      <aside class="span4">
-        <section>
-          <%= render 'shared/user_info' %>
-        </section>
-        <section>
-          <%= render 'shared/micropost_form' %>
-        </section>
-      </aside>
-    </div>
-<% else %>
-    <div class="center hero-unit">
-      <h1>Recipe Social</h1>
-
-      <h2>
-        Eat your passion!
-      </h2>
-    </div>
-    <div class="row">
-      <div class="span6 offset3">
-        <%= form_for(:session, url: sessions_path) do |f| %>
-
-            <%= f.label :email %>
-            <%= f.text_field :email, value: params[:email] %>
-
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-
-            <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-        <% end %>
-
-        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-      </div>
-    </div>
-<% end %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/micropost_form' %>
+    </section>
+  </aside>
+</div>

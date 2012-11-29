@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
+    logger.info "LOGGING IN!!!!!!!!!"
     @email = params[:session][:email].downcase
     user = User.find_by_email(@email)
     if user
@@ -9,12 +10,12 @@ class SessionsController < ApplicationController
         redirect_to user
       else
         flash[:error] = "Sorry, your password is incorrect"
-        redirect_to root_path(email: @email)
+        redirect_to signin_path(email: @email)
       end
       # Sign the user in and redirect to the user's show page.
     else
       flash[:error] = "Sorry, no user exists with the email address #@email"
-      redirect_to root_path(email: @email)
+      redirect_to signin_path(email: @email)
     end
   end
 

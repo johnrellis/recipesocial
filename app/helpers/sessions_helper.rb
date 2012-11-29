@@ -2,7 +2,7 @@ module SessionsHelper
 
   def signed_in_user
     unless signed_in?
-      redirect_to root_url, notice: "Please sign in."#notic or flash?
+      redirect_to root_url, notice: "Please sign in."
     end
   end
 
