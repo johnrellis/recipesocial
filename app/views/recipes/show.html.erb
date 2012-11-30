@@ -2,10 +2,17 @@
 <h1><%= @recipe.name %></h1>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span8 offset3">
+    <% if current_user?(@recipe.user) %>
+        <div>
+          <%= link_to "edit recipe", edit_recipe_path%>
+        </div>
+    <% end %>
     <%= @recipe.method.html_safe %>
     <% if current_user?(@recipe.user) %>
-        <%= link_to "edit", edit_recipe_path%>
+        <div>
+          <%= link_to "edit recipe", edit_recipe_path%>
+        </div>
     <% end %>
   </div>
 </div>
