@@ -21,4 +21,22 @@ class RecipesController < ApplicationController
     redirect_to root_url
   end
 
+  def show
+    @recipe = Recipe.find_by_id(params[:id])
+  end
+
+  def edit
+    @recipe = Recipe.find_by_id(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find_by_id(params[:id])
+    if @recipe.update_attributes params[:recipe]
+      flash[:success] = 'Recipe updated!'
+      redirect_to recipe_path(@recipe)
+    else
+      render 'edit'
+    end
+  end
+
 end

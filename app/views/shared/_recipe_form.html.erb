@@ -2,10 +2,10 @@
     <%= render 'shared/error_messages', object: f.object %>
 
     <%= f.label :name%>
-    <%= f.text_field :name, placeholder: "Name your culinary creation...."  %>
+    <%= f.text_field :name, placeholder: "Name your culinary creation....", value: @recipe.name  %>
 
     <%= f.label :method %>
-    <%= f.text_area :method, placeholder: "I'm hungry..." %>
+    <%= f.text_area :method, placeholder: "I'm hungry...", value: @recipe.method %>
 
     <%= f.submit "Stir it up!", class: "btn btn-large btn-primary" %>
 <% end %>

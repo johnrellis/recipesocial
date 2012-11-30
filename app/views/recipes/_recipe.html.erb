@@ -2,7 +2,7 @@
   <a href="<%= user_path recipe.user %>">
     <%= gravatar_for recipe.user, size: 80 %>
   </a>
-  <h4><%= recipe.name %></h4>
+  <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
   <span class="content"><%= truncate_html(recipe.method, length: 20).html_safe %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(recipe.created_at) %> ago.

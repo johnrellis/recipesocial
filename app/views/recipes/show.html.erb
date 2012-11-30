@@ -1,0 +1,11 @@
+<% provide(:title, @recipe.name) %>
+<h1><%= @recipe.name %></h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= @recipe.method.html_safe %>
+    <% if current_user?(@recipe.user) %>
+        <%= link_to "edit", edit_recipe_path%>
+    <% end %>
+  </div>
+</div>
