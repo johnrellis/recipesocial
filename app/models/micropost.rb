@@ -6,4 +6,6 @@ class Micropost < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 140 }
 
   default_scope order: 'microposts.created_at DESC'
+  #http://stackoverflow.com/questions/2382642/ruby-on-rails-how-to-pull-out-most-recent-entries-from-a-limited-subset-of-a-da
+  scope :recent, :limit => 5, :order => 'microposts.created_at DESC'
 end

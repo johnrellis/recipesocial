@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    #DailyNotifier.notify.deliver
     @user = User.find(params[:id])
+    DailyNotifier.notify(@user).deliver
     @microposts = @user.microposts
     @recipes = @user.recipes
   end

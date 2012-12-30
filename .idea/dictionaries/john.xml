@@ -2,6 +2,8 @@
   <dictionary name="john">
     <words>
       <w>gravatar</w>
+      <w>micropost</w>
+      <w>microposts</w>
     </words>
   </dictionary>
 </component>

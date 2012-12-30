@@ -7,4 +7,6 @@ class Recipe < ActiveRecord::Base
   validates :method, presence: true
 
   default_scope order: 'recipes.created_at DESC'
+  #http://stackoverflow.com/questions/2382642/ruby-on-rails-how-to-pull-out-most-recent-entries-from-a-limited-subset-of-a-da
+  scope :recent, :limit => 5, :order => 'recipes.created_at DESC'
 end
