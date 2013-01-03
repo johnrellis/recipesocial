@@ -3,6 +3,7 @@ Mytwitter::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :recipes
+  resources :emails, only: [:new, :create, :destroy]
 
 =begin
   get "static_pages/home"
@@ -16,6 +17,8 @@ Mytwitter::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+
+  match '/email', to: 'emails#create'
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'static_pages#signin'
