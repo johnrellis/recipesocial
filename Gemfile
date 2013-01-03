@@ -49,10 +49,14 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+#bootstrap rich text editor
 gem 'bootstrap-sass', '2.0.0'
-gem "bootstrap-wysihtml5-rails"
+gem 'bootstrap-wysihtml5-rails'
 
 #allow truncation of html
-gem "nokogiri"
-gem "htmlentities"
+gem 'nokogiri'
+gem 'htmlentities'
 gem 'truncate_html'
+
+#schedule tasks
+gem 'rufus-scheduler'
