@@ -9,7 +9,7 @@ Mytwitter::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -67,4 +67,20 @@ Mytwitter::Application.configure do
 
   config.gem "nokogiri"
   config.gem "htmlentities"
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address:                  "smtp.gmail.com",
+      port:                     587,
+      domain:                   "gmail.com",
+      authentication:           "plain",
+      user_name:                "recipesocial.noreply@gmail.com",
+      password:                 "yumyumyum" ,
+      enable_startttls_auto:    true
+  }
+
+  config.action_mailer.default_url_options = {
+      :host => "http://recipesocial.cloudfoundry.com/"
+  }
+
 end

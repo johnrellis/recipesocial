@@ -24,7 +24,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
+
+group :development do
+  gem 'jquery-rails'
+end
+
+group :production do
+  gem 'cloudfoundry-jquery-rails'
+end
+
 
 #group :development, :test do
 #  gem 'rspec-rails', '2.10.0'
