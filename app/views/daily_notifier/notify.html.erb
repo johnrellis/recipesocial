@@ -12,6 +12,7 @@
         <a href="<%= user_url recipe.user %>">
           <%= gravatar_for recipe.user, size: 80 %>
         </a>
+        <h5><%= recipe.user.name %></h5>
         <h5>Posted <%= time_ago_in_words(recipe.created_at) %> ago.</h5>
         <br>
         <%= recipe.method.html_safe %>

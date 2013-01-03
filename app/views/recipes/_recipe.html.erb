@@ -2,6 +2,7 @@
   <a href="<%= user_path recipe.user %>">
     <%= gravatar_for recipe.user, size: 80 %>
   </a>
+  <h5><%= link_to recipe.user.name, user_path(recipe.user) %></h5>
   <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
   <span class="content"><%= truncate_html(recipe.method, length: 20).html_safe %></span>
   <span class="timestamp">

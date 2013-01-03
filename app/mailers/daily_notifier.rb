@@ -13,6 +13,6 @@ class DailyNotifier < ActionMailer::Base
     @microposts = Micropost.recent
     @greeting = "Hi #{user.name},"
 
-    mail to: "johnrellis85@yahoo.ie", subject: "Your Daily Menu From Recipe Social"
+    mail to: user.email, subject: "Your Daily Menu From Recipe Social"
   end
 end
