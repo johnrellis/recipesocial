@@ -80,7 +80,7 @@ Mytwitter::Application.configure do
   }
 
   config.action_mailer.default_url_options = {
-      :host => "http://recipesocial.cloudfoundry.com/"
+      :host => "recipesocial.cloudfoundry.com"
   }
 
 end
