@@ -15,6 +15,11 @@
         <h5><%= recipe.user.name %></h5>
         <h5>Posted <%= time_ago_in_words(recipe.created_at) %> ago.</h5>
         <br>
+        <%= recipe.gluten_free_text %>
+        <br>
+        Spice level : <%= recipe.spice_level %>
+        <br>
+        <br>
         <%= recipe.method.html_safe %>
       </li>
   <% end %>

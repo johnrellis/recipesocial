@@ -1,11 +1,15 @@
 <%= form_for(@recipe) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
-    <%= f.label :name%>
-    <%= f.text_field :name, placeholder: "Name your culinary creation....", value: @recipe.name  %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Name your culinary creation....", value: @recipe.name %>
 
-    <%= f.label :gluten_free, class: "checkbox inline"%>
-    <%= f.check_box :gluten_free, value: @recipe.gluten_free  %>
+    <%= f.label :spice_level, class: "select inline" %>
+    <%= f.select :spice_level, @recipe.spice_drop_down_selection, value:@recipe.spice_level %>
+
+    <%= f.label :gluten_free, class: "checkbox inline" %>
+    <%= f.check_box :gluten_free, value: @recipe.gluten_free %>
+
     <br>
     <br>
 

@@ -7,6 +7,9 @@
   <span class="content">
     <%= recipe.gluten_free_text %>
     <br>
+    Spice level : <%= recipe.spice_level %>
+    <br>
+    <br>
     <%= truncate_html(recipe.method, length: 20).html_safe %>
     <br>
     <%= link_to "more...", recipe_path(recipe) %>

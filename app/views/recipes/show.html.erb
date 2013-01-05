@@ -13,6 +13,8 @@
     <% end %>
     <%= @recipe.gluten_free_text %>
     <br>
+    Spice level : <%= @recipe.spice_level %>
+    <br>
     <br>
     <%= @recipe.method.html_safe %>
     <% if current_user?(@recipe.user) %>
