@@ -4,6 +4,11 @@
     <%= f.label :name%>
     <%= f.text_field :name, placeholder: "Name your culinary creation....", value: @recipe.name  %>
 
+    <%= f.label :gluten_free, class: "checkbox inline"%>
+    <%= f.check_box :gluten_free, value: @recipe.gluten_free  %>
+    <br>
+    <br>
+
     <%= f.label :method %>
     <%= f.text_area :method, placeholder: "I'm hungry...", value: @recipe.method %>
 

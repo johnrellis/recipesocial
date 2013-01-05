@@ -11,6 +11,13 @@
                       title: @recipe.name %>
         </div>
     <% end %>
+    <% if @recipe.gluten_free %>
+        Gluten Free!
+    <% else %>
+        May contain gluten!
+    <% end %>
+    <br>
+    <br>
     <%= @recipe.method.html_safe %>
     <% if current_user?(@recipe.user) %>
         <div>
